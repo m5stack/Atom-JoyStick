@@ -1,10 +1,10 @@
-# ATOMS3 FLY REMOTER
+# Atom-JoyStick
 
 ## Overview
 
-Contains case programs of M5Stack ATOMS3 FLY REMOTER.
+Contains case programs of M5Stack Atom-JoyStick.
 
 
 ## License
 
-[ATOMS3 FLY REMOTER - MIT](LICENSE)
+[Atom-JoyStick - MIT](LICENSE)
