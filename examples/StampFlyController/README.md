@@ -1,8 +1,12 @@
 # M5StampFly Controller
 
-## framework
+## Framework
 
-platfromio
+Platfromio
+
+## Base on project
+
+[M5Fly-kanazawa/AtomJoy2024June (github.com)](https://github.com/M5Fly-kanazawa/AtomJoy2024June)
 
 ## Third-party libraries
 
