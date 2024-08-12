@@ -136,6 +136,9 @@ void OnDataRecv(const uint8_t *mac_addr, const uint8_t *recv_data, int data_len)
             fly_mode = recv_data[2 + 4 * (28 - 1) + 1];
             memcpy((uint8_t *)&tof_front, &recv_data[2 + 4 * (28 - 1) + 2], 2);
             is_fly_flag = 1;
+            if (fly_mode == PARKING_MODE) {
+                fly_status_manual = 0;
+            }
             // USBSerial.printf("roll:%.2f, pitch:%.2f, yaw:%.2f, voltage:%.2f, alt_flag:%d, fly_mode:%d,
             // tof_front:%d\r\n", roll_angle, pitch_angle, yaw_angle, fly_bat_voltage, alt_flag, fly_mode, tof_front);
         }
