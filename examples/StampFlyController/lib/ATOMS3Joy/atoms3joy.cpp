@@ -44,12 +44,12 @@ uint8_t OPTION_BUTTON = LEFT_BUTTON;
 
 uint16_t read_2byte_data(uint8_t address) {
     uint16_t data = 0;
-    Wire1.beginTransmission(I2C_ADDRESS);  // I2Cスレーブのデータ送信開始
-    Wire1.write(address);                  // x軸指定
-    Wire1.endTransmission(false);          // I2Cスレーブのデータ送信終了
-    Wire1.requestFrom(I2C_ADDRESS, 2);     // Request 2 bytes from the slave device.
+    Wire.beginTransmission(I2C_ADDRESS);  // I2Cスレーブのデータ送信開始
+    Wire.write(address);                  // x軸指定
+    Wire.endTransmission(false);          // I2Cスレーブのデータ送信終了
+    Wire.requestFrom(I2C_ADDRESS, 2);     // Request 2 bytes from the slave device.
     for (uint8_t i = 0; i < 2; i++) {      // If data is received.
-        buffer[i] = Wire1.read();
+        buffer[i] = Wire.read();
     }
     data = buffer[1] * 256 + buffer[0];
 
@@ -58,11 +58,11 @@ uint16_t read_2byte_data(uint8_t address) {
 
 uint16_t read_byte_data(uint8_t address) {
     uint16_t data = 0;
-    Wire1.beginTransmission(I2C_ADDRESS);  // I2Cスレーブのデータ送信開始
-    Wire1.write(address);                  // x軸指定
-    Wire1.endTransmission(false);          // I2Cスレーブのデータ送信終了
-    Wire1.requestFrom(I2C_ADDRESS, 1);     // Request 1 byte from the slave device.
-    data = Wire1.read();
+    Wire.beginTransmission(I2C_ADDRESS);  // I2Cスレーブのデータ送信開始
+    Wire.write(address);                  // x軸指定
+    Wire.endTransmission(false);          // I2Cスレーブのデータ送信終了
+    Wire.requestFrom(I2C_ADDRESS, 1);     // Request 1 byte from the slave device.
+    data = Wire.read();
     return data;
 }
 

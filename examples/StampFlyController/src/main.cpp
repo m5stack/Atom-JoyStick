@@ -310,8 +310,8 @@ void IRAM_ATTR onTimer() {
 
 void setup() {
     M5.begin();
-    Wire1.begin(38, 39);
-    Wire1.setClock(400 * 1000);
+    Wire.begin(38, 39);
+    Wire.setClock(400 * 1000);
     load_data();
     M5.update();
     setup_pwm_buzzer();
@@ -418,12 +418,12 @@ void setup() {
     int nDevices;
 
     ////////////////////////////////////////////////////////
-    USBSerial.println("Scanning... Wire1");
+    USBSerial.println("Scanning... Wire");
 
     nDevices = 0;
     for (address = 1; address < 127; address++) {
-        Wire1.beginTransmission(address);
-        error = Wire1.endTransmission();
+        Wire.beginTransmission(address);
+        error = Wire.endTransmission();
 
         if (error == 0) {
             USBSerial.print("I2C device found at address 0x");
